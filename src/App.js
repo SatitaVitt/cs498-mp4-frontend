@@ -21,7 +21,8 @@ const fetchEvents = async () => {
   if (!response.ok) {
     throw new Error(`Failed to fetch events: ${response.status} ${response.statusText}`);
   }
-  return response.json();
+  const json = await response.json();
+  return json.data;
 };
 
 
